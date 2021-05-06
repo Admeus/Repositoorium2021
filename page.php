@@ -42,7 +42,7 @@ if($today < $semesterStart) {
 
 // Pildikaust
 
-$picsDir = "../../pics/";
+$picsDir = "../pics/";
 $photoTypesAllow = ['image/jpeg', 'image/png'];
 $allFiles = array_slice(scandir($picsDir), 2);
 $photoList = [];
@@ -66,12 +66,11 @@ if($photoCount!=0){
 			array_push($randomIMGList, $randomIMG);
 			$randomImgHTML .= '<img src="' . $picsDir . $randomIMG . '" alt="Juhuslik Pilt Haapsalust"></img>' . "\n";
 		} 
-	} while (count($randomIMGList)<=2);
+	} while (count($randomIMGList)<=3); //Siia läheb fotode arv, mida kuvada
 
 } else {
 	$randomImgHTML = '<p>Ühtegi pilti pole, mida kuvada</p>';
 }
-
 ?>
 
 <!DOCTYPE html>
@@ -87,7 +86,7 @@ if($photoCount!=0){
 	}
 
 	.night {
-		background-color: darkgray;
+		background-color: orange;
 	}
 </style>
 <body class=<?php echo $bgclass; ?>>
